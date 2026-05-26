@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f6efe2" />
+  <title>Menù</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cormorant+SC:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f6efe2;
+      --paper: #fbf6ec;
+      --ink: #2a1d10;
+      --muted: #6b5a44;
+      --gold: #a8884a;
+      --gold-soft: #c9a96a;
+      --rule: #c8b58a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Cormorant Garamond', 'Garamond', serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 18px;
+      background-image:
+        radial-gradient(circle at 20% 10%, rgba(200, 181, 138, 0.18), transparent 55%),
+        radial-gradient(circle at 80% 90%, rgba(168, 136, 74, 0.14), transparent 50%);
+    }
+
+    .card {
+      width: 100%;
+      max-width: 560px;
+      background: var(--paper);
+      border: 1px solid rgba(168, 136, 74, 0.28);
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.6) inset,
+        0 20px 50px -25px rgba(60, 40, 10, 0.35);
+      padding: 56px 38px 48px;
+      position: relative;
+    }
+
+    .card::before,
+    .card::after {
+      content: "";
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--rule), transparent);
+    }
+    .card::before { top: 16px; }
+    .card::after  { bottom: 16px; }
+
+    .eyebrow {
+      font-family: 'Cormorant SC', 'Cormorant Garamond', serif;
+      letter-spacing: 0.32em;
+      font-size: 12px;
+      color: var(--gold);
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: clamp(44px, 9vw, 62px);
+      text-align: center;
+      line-height: 1;
+      color: var(--ink);
+      letter-spacing: 0.01em;
+    }
+
+    .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin: 22px 0 36px;
+      color: var(--gold);
+    }
+    .ornament .line {
+      flex: 1;
+      max-width: 110px;
+      height: 1px;
+      background: var(--rule);
+    }
+    .ornament svg {
+      width: 22px;
+      height: 22px;
+      display: block;
+    }
+
+    .section { margin-top: 30px; }
+    .section:first-of-type { margin-top: 0; }
+
+    .section-title {
+      font-family: 'Cormorant SC', serif;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-align: center;
+      color: var(--gold);
+      font-size: 13px;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+    }
+
+    .dish {
+      text-align: center;
+      padding: 18px 8px;
+    }
+    .dish + .dish {
+      border-top: 1px dashed rgba(168, 136, 74, 0.35);
+    }
+
+    .dish .name {
+      font-size: clamp(22px, 5vw, 26px);
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.25;
+      letter-spacing: 0.005em;
+    }
+
+    .dish .desc {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--muted);
+      font-size: clamp(16px, 3.6vw, 18px);
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    .footer {
+      margin-top: 38px;
+      text-align: center;
+      color: var(--gold);
+      font-family: 'Cormorant SC', serif;
+      letter-spacing: 0.3em;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 420px) {
+      .card { padding: 44px 22px 36px; }
+      .ornament { margin: 18px 0 28px; }
+      .section { margin-top: 24px; }
+    }
+
+    @media print {
+      body { background: #fff; padding: 0; }
+      .card { box-shadow: none; border-color: #d8c79a; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <p class="eyebrow">Il nostro matrimonio</p>
+    <h1>Menù</h1>
+
+    <div class="ornament" aria-hidden="true">
+      <span class="line"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+        <path d="M12 2 C 14 7, 14 7, 19 9 C 14 11, 14 11, 12 16 C 10 11, 10 11, 5 9 C 10 7, 10 7, 12 2 Z" />
+        <circle cx="12" cy="20" r="1.2" fill="currentColor" stroke="none" />
+      </svg>
+      <span class="line"></span>
+    </div>
+
+    <section class="section">
+      <h2 class="section-title">Primi</h2>
+      <div class="dish">
+        <p class="name">Tortelloni</p>
+        <p class="desc">ricotta di capra e ortica</p>
+      </div>
+      <div class="dish">
+        <p class="name">Maccheroni al pettine</p>
+        <p class="desc">ragù di galletto</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Secondi</h2>
+      <div class="dish">
+        <p class="name">Guanciale</p>
+        <p class="desc">con patate al forno</p>
+      </div>
+      <div class="dish">
+        <p class="name">Roastbeef</p>
+        <p class="desc">con bietole</p>
+      </div>
+    </section>
+
+    <p class="footer">Buon appetito</p>
+  </main>
+</body>
+</html>
