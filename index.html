@@ -45,12 +45,28 @@
 
     .eyebrow {
       font-family: 'Cormorant SC', 'Cormorant Garamond', serif;
-      letter-spacing: 0.4em;
-      font-size: 12px;
+      letter-spacing: 0.35em;
+      font-size: 13px;
       color: var(--gold);
       text-align: center;
       text-transform: uppercase;
       margin-bottom: 14px;
+    }
+    .eyebrow .amp {
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: 0;
+      margin: 0 0.15em;
+    }
+
+    .coda {
+      margin-top: 36px;
+      text-align: center;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--muted);
+      font-size: clamp(16px, 3.6vw, 18px);
+      line-height: 1.4;
     }
 
     h1 {
@@ -138,7 +154,7 @@
 </head>
 <body>
   <main class="menu" role="main">
-    <p class="eyebrow">Il nostro matrimonio</p>
+    <p class="eyebrow">Giacomo <span class="amp">&amp;</span> Caterina</p>
     <h1>Menù</h1>
 
     <div class="ornament" aria-hidden="true">
@@ -173,6 +189,8 @@
         <p class="desc">con bietole</p>
       </div>
     </section>
+
+    <p class="coda">a seguire, buffet di dolci</p>
 
     <p class="footer">Buon appetito</p>
   </main>
